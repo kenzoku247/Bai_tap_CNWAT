@@ -1,0 +1,93 @@
+h1,h2,h3,h4,h5,h6 {
+    margin-block: unset;
+    font-weight: unset;
+}
+
+h3{
+    font-size: 22px;
+}
+
+li {
+    font-size: 24px;
+}
+
+p {
+    font-size:24px;
+}
+
+.hl {
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+.vl {
+    height: 200px;
+    border-left: 1px solid black;
+}
+
+.Header {
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.Logo {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: center;
+    /* align-items: center; */
+    padding-left: 3rem;
+}
+
+.Navbar {
+    display: flex;
+    width: 100%;
+    gap: 3rem;
+    
+}
+
+.Body {
+    padding-top: 3rem;
+    display: flex;
+    width: 100%;
+    gap: 3rem;
+}
+
+.LeftSide{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding-left: 3rem;
+}
+
+.LeftSide>ul {
+    padding-inline-start:15px;
+}
+
+.LeftSide>button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.RightSide{
+    width: 100%;
+}
+
+.Info {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.Info>img {
+    max-width: 100px;
+    border: 1px solid black;
+}

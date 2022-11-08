@@ -1,0 +1,76 @@
+h1,h2,h3,h4,h5,h6 {
+    margin-block: unset;
+    font-weight: unset;
+}
+
+.Header {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.Logo>img {
+    max-width: 150px;
+}
+
+.LeftHeader {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.RightHeader {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 100%;
+}
+
+
+.Body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 100px;
+    width: 100%;
+}
+
+.Title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 24px;
+}
+
+.Info {
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+}
+
+.LeftInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.RightInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.Table {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Table>table {
+    width: 100%;
+     /* margin: 0px auto; */
+}
