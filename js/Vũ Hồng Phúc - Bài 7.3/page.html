@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table LOP</title>
+    <link rel="stylesheet" href="page_lop.css">
+    <script src="check_lop.js"></script>
+</head>
+<body>
+    <div class="Redirect">
+        <a href="../Vũ Hồng Phúc - Bài 7.2/page.html">Bài 7.2. Viết trang kiểm tra thi trắc nghiệm gồm nhiều thể loại</a>
+        <a href="" style="text-decoration: none; color:black;">Bài 7.3. Thiết kế form nhập liệu cho table LOP, xây dựng các đoạn JS kiểm tra dữ liệu đầu vào của form này</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.4/page.html">Bài 7.4. Thiết kế form nhập liệu cho table HOSO, xây dựng các đoạn JS kiểm tra dữ liệu đầu vào của form này.</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.5/page.html">Bài 7.5. Form nhập</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.6/page.html">Bài 7.6. Danh sách</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.7/page.html">Bài 7.7. Thực đơn</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.8/page.html">Bài 7.8. Tab</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.9/page.html">Bài 7.9. Cây</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.10/page.html">Bài 7.10. Máy tính</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.11/page.html">Bài 7.11. Hoạt ảnh</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.12/page.html">Bài 7.12. Sắp xếp và tìm kiếm trên bảng</a>
+    </div>
+    <form action="" class="LOP">
+        <h3>Form nhập thông tin lớp cho sinh viên ATTT</h3>
+        <label for="malop">Mã lớp (*)</label>
+        <select name="malop" id="malop">
+            <option value="L01">L01</option>
+            <option value="L02">L02</option>
+            <option value="L03">L03</option>
+            <option value="L04">L04</option>
+            <option value="L05">L05</option>
+            <option value="L06">L06</option>
+            <option value="L07">L07</option>
+            <option value="L08">L08</option>
+            <option value="L09">L09</option>
+            <option value="L010">L010</option>
+            <option value="L011">L011</option>
+            <option value="L012">L012</option>
+            <option value="L013">L013</option>
+          </select>
+
+        <label for="tenlop">Tên lớp (*)</label>
+        <input type="text" id="tenlop" required onchange="change(this.value,'tenlop')" placeholder="VD: An toàn mạng không dây và di động">
+        <span id="tenlop_err"></span>
+
+        <label for="sotinchi">Số tín chỉ (*)</label>
+        <select name="sotinchi" id="sotinchi">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        <!-- <input type="text" id="sotinchi" required onchange="change(this.value,'sotinchi')" placeholder="VD: 3">
+        <span id="sotinchi"></span> -->
+ 
+        <label for="gvcn">GVCN (*)</label>
+        <input type="text" id="gvcn" required onchange="change(this.value,'gvcn')" placeholder="VD: Nguyển Văn A">
+        <span id="gvcn_err"></span>
+
+        <div id="query"></div>
+        <input type="button" value="Kiểm tra" onclick="kiemtra()" >
+    </form>
+</body>
+</html>

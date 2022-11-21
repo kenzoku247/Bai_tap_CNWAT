@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table HOSO</title>
+    <link rel="stylesheet" href="page_hoso.css">
+    <script src="check_hoso.js"></script>
+</head>
+<body>
+    <div class="Redirect">
+        <a href="../Vũ Hồng Phúc - Bài 7.2/page.html">Bài 7.2. Viết trang kiểm tra thi trắc nghiệm gồm nhiều thể loại</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.3/page.html" >Bài 7.3. Thiết kế form nhập liệu cho table LOP, xây dựng các đoạn JS kiểm tra dữ liệu đầu vào của form này</a>
+        <a href="" style="text-decoration: none; color:black;">Bài 7.4. Thiết kế form nhập liệu cho table HOSO, xây dựng các đoạn JS kiểm tra dữ liệu đầu vào của form này.</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.5/page.html">Bài 7.5. Form nhập</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.6/page.html">Bài 7.6. Danh sách</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.7/page.html">Bài 7.7. Thực đơn</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.8/page.html">Bài 7.8. Tab</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.9/page.html">Bài 7.9. Cây</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.10/page.html">Bài 7.10. Máy tính</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.11/page.html">Bài 7.11. Hoạt ảnh</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.12/page.html">Bài 7.12. Sắp xếp và tìm kiếm trên bảng</a>
+    </div>
+    <form action="" class="HOSO">
+        <h3>Form nhập thông tin hồ sơ cho sinh viên ATTT</h3>
+        <label for="khoa">Khoá (*)</label>
+        <select name="khoa" id="khoa">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+        </select>
+        
+        <label for="lop">Lớp (*)</label>
+        <select name="lop" id="lop">
+            <option value="01">A</option>
+            <option value="02">B</option>
+            <option value="03">C</option>
+            <option value="04">D</option>
+            <option value="05">E</option>
+            <option value="06">F</option>
+            <option value="07">G</option>
+            <option value="08">H</option>
+        </select>
+
+        <label for="maSV">Mã sinh viên (*)</label>
+        <input type="text" id="maSV" required onchange="change(this.value,'maSV');" placeholder="VD: AT160123">
+        <span id="maSV_err"></span>
+
+        <label for="hoten">Họ tên (*)</label>
+        <input type="text" id="hoten" required onchange="change(this.value,'hoten')" placeholder="VD: Nguyễn Văn A">
+        <span id="hoten_err"></span>
+
+        <label for="ngaysinh">Ngày sinh (*)</label>
+        <input type="date" id="ngaysinh" name="ngaysinh" required onchange="change(this.value,'ngaysinh')">
+        <span id="ngaysinh_err"></span>
+
+        <label for="diachi">Địa chỉ (*)</label>
+        <input type="text" id="diachi" required onchange="change(this.value,'diachi')" placeholder="VD: Ba Đình, Hà Nội">
+        <span id="diachi_err"></span>
+
+        <div id="query"></div>
+        <input type="button" value="Kiểm tra" onclick="kiemtra()" >
+    </form>
+</body>
+</html>

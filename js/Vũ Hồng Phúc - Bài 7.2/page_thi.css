@@ -1,0 +1,66 @@
+h3,h4 {
+	margin-block:unset;
+}
+
+
+body {
+    padding:0;
+	width: 800px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	top:0;
+    background-color: #ffe6de;
+}
+
+.Redirect {
+    width: 240px;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    background-color: white;
+    position:absolute;
+    left: -350px;
+    top:0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.Title {
+    display: flex;
+    justify-content:space-between;  
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.Card {
+    background-color: #ffffff;
+    padding:  0.5rem;
+    border-radius: 12px;
+}
+
+.quest {
+    margin-bottom: 0.2rem;
+}
+
+.clock {
+    border: 1px solid #004853;
+    display:inline;
+    padding: 5px;
+    color: #004853;
+    font-family: Verdana, sans-serif, Arial;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}

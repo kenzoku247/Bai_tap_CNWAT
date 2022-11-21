@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="file.js"></script>
+    <link rel="stylesheet" href="page.css">
+</head>
+<body >
+    <div class="Redirect">
+        <a href="../Vũ Hồng Phúc - Bài 7.3/page.html">Bài 7.3. Thiết kế form nhập liệu cho table LOP, xây dựng các đoạn JS kiểm tra dữ liệu đầu vào của form này</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.4/page.html">Bài 7.4. Thiết kế form nhập liệu cho table HOSO, xây dựng các đoạn JS kiểm tra dữ liệu đầu vào của form này.</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.5/page.html">Bài 7.5. Form nhập</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.6/page.html">Bài 7.6. Form nhập</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.7/page.html">Bài 7.7. Thực đơn</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.8/page.html">Bài 7.8. Tab</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.9/page.html">Bài 7.9. Cây</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.10/page.html">Bài 7.10. Máy tính</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.11/page.html">Bài 7.11. Hoạt ảnh</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.12/page.html">Bài 7.12. Sắp xếp và tìm kiếm trên bảng</a>
+
+    </div>
+    <div class="Title">
+        <div>
+            <div id="nora"></div>
+            <div id="score"></div>
+        </div>
+        <a href="page.html" onclick="removeStorage()">Làm lại</a>
+    </div>
+    <form action="result.html" id="Form" class="Form">
+        
+        <script>  
+            myFunc("nora","Số câu trả lời đúng: " + localStorage.getItem("NoRA") + "/" + localStorage.getItem("UserAnswers").split(',').length);
+            myFunc("score","Điểm số: " + localStorage.getItem("Score"));
+
+            var userAnswers = localStorage.getItem("UserAnswers").split(',');
+
+            var wrapper = document.getElementById('Form');
+            var quest = '';
+            for (var i = 0; i < select_questions.length; i++) {
+                quest += '<div class="Card">';
+                quest += '<h4 class="quest">Câu ' + (i+1) + ': '+ select_questions[i] + '</h4>';
+                for (var j = 0; j < select_answers[i].length;j ++){
+                    quest += '<input type="radio" id="answer' + (j+1) +'" name="quest'+(i+1)+'" value="'+ (j+1) +'" disabled';
+                    if (j+1 == userAnswers[i]) {
+                        quest += ' checked';
+                    }
+                    quest += '><label for="answer"';
+                    if (j+1 == rightAnswers[i]) {
+                        quest += ' style="background-color: green; color:white;"';
+                    }
+                    quest += '>'+ (select_answers[i][j]) +'</label><br>';
+                }
+                quest += '</div>';
+            }
+
+            for (var i = 0; i < type_questions.length; i++) {
+                quest += '<div class="Card">';
+                quest += '<h4 class="quest">Câu ' + (select_questions.length + i+1) + ': '+ type_questions[i] + '</h4>';
+                if ((userAnswers[select_questions.length + i]) != rightAnswers[select_questions.length + i]) {
+                    quest += '<input type="text" id="quest'+(select_questions.length+ i+1)+'" name="quest'+(select_questions.length+ i+1)+'" value="' + (userAnswers[select_questions.length + i]) +'" disabled'
+                    quest += ' style="background-color: red;  color:white;"><br><br>'
+                } 
+                quest += '<input type="text" id="quest'+(select_questions.length+ i+1)+'" name="quest'+(select_questions.length+ i+1)+'" value="' + (rightAnswers[select_questions.length + i]) +'" disabled style="background-color: green; color:white;">';
+                quest += '</div>';
+            }
+            wrapper.innerHTML = quest;
+            
+        </script>
+    </form>
+</body>
+</html>
