@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Nhập</title>
     <link rel="stylesheet" href="page_dangky.css">
-    <script src="check.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
     <div class="Redirect">
@@ -26,81 +27,82 @@
         <h3>Đăng ký</h3>
         <div class="input">
             <label class="label" for="hoten">Họ tên:</label>
-            <input type="text" name="hoten" id="hoten" required onchange="change(this.value,'hoten');checkTen();" style="background-color: #02cbc9;">
+            <input type="text" name="hoten" id="hoten" inputIndex="1" required onchange="change(this.value,'hoten');checkTen();" style="background-color: #02cbc9;">
             <span id="hoten_err"></span>
         </div>
         
         <div class="input">
             <label class="label" for="diachi">Địa chỉ:</label>
-            <input type="text" name="diachi" id="diachi" onchange="change(this.value,'diachi')">
+            <input type="text" name="diachi" id="diachi" inputIndex="2" onchange="change(this.value,'diachi');checkDiaChi();">
             <span id="diachi_err"></span>
         </div>
 
         <div class="input">
             <label class="label" for="gioitinh">Giới tính:</label>
-            <input type="radio" name="gioitinh" id="nam" value="Nam"><label" for="nam">Nam</label>
-            <input type="radio" name="gioitinh" id="nu" value="Nữ"><label" for="nu">Nữ</label>
+            <input type="radio" name="gioitinh" id="nam" inputIndex="3" value="Nam"><label" for="nam">Nam</label>
+            <input type="radio" name="gioitinh" id="nu" inputIndex="4" value="Nữ"><label" for="nu">Nữ</label>
             <span id="gioitinh_err"></span>
         </div>
 
         <div class="input">
             <label class="label" for="ngaysinh">Ngày sinh:</label>
-            <input type="date" id="ngaysinh" name="ngaysinh" required onchange="change(this.value,'ngaysinh')">
+            <input type="date" id="ngaysinh" name="ngaysinh" inputIndex="5" required onchange="change(this.value,'ngaysinh')">
             <span id="ngaysinh_err"></span>
         </div>
 
         <div class="input">
             <label class="label" for="email">Email:</label>
-            <input type="text" name="email" id="email" required onchange="change(this.value,'email')" style="background-color: #02cbc9;">
+            <input type="text" name="email" id="email" required inputIndex="6" onchange="change(this.value,'email')" style="background-color: #02cbc9;">
             <span id="email_err"></span>
         </div>
 
         <div class="input">
             <label class="label" for="dienthoai">Điện thoại:</label>
-            <input type="text" id="dienthoai" onchange="change(this.value,'dienthoai')">
+            <input type="text" id="dienthoai" inputIndex="7" onchange="change(this.value,'dienthoai')">
             <span id="dienthoai_err"></span>
         </div>
 
         <div class="input">
             <label class="label" for="khoa">Khoá đăng ký:</label>
-            <input type="checkbox" name="khoa" id="tienganh"><label for="tienganh">Tiếng Anh</label>
-            <input type="checkbox" name="khoa" id="quantri"><label for="quantri">Quản trị</label></label>
-            <input type="checkbox" name="khoa" id="cntt"><label for="cntt">CNTT</label>
+            <input type="checkbox" name="khoa" inputIndex="8" id="tienganh"><label for="tienganh">Tiếng Anh</label>
+            <input type="checkbox" name="khoa" inputIndex="9" id="quantri"><label for="quantri">Quản trị</label></label>
+            <input type="checkbox" name="khoa" inputIndex="10" id="cntt"><label for="cntt">CNTT</label>
             <span id="khoa_err"></span>
         </div>
 
         <div class="input">
             <label class="label" for="username">Tên sử dụng:</label>
-            <input type="text" name="username" id="username" required style="background-color: #02cbc9;">    
+            <input type="text" name="username" id="username" inputIndex="11" required style="background-color: #02cbc9;">    
             <span id="username_err"></span>
         </div>
 
         <div class="input">
             <label class="label" for="passowrd">Mật khẩu:</label>
-            <input type="password" name="password" id="password" required style="background-color: #02cbc9;">
+            <input type="password" name="password" id="password" inputIndex="12" required style="background-color: #02cbc9;">
             <input type="checkbox" name="show_pass" id="show_pass" value="0" onclick="showPass('password','show_pass');"><label for="show_pass">Show</label>
             <span id="password_err"></span>
         </div>
 
         <div class="input">
             <label class="label" for="re_passowrd">Gõ lại mật khẩu:</label>
-            <input type="password" name="re_password" id="re_password" required style="background-color: #02cbc9;">
+            <input type="password" name="re_password" id="re_password" inputIndex="13" required style="background-color: #02cbc9;">
             <input type="checkbox" name="show_re_pass" id="show_re_pass" value="0" onclick="showPass('re_password','show_re_pass');"><label for="show_re_pass">Show</label>
             <span id="re_password_err"></span>
         </div>
 
         <div class="input">
             <label class="label" for="ghichu">Ghi chú:</label>
-            <textarea name="ghichu" id="ghichu" cols="25" rows="4"></textarea>
+            <textarea name="ghichu" id="ghichu" inputIndex="14" cols="25" rows="4"></textarea>
         </div>
         
-        <div class="button">
+        <!-- <div class="button">
             <input type="button" value="Chấp nhận" onclick="submitForm()" style="width: 10%; align-self: center;" >
             <input type="button" value="Bỏ qua" onclick="cancelForm()" style="width: 10%; align-self: center;" >
-        </div>
+        </div> -->
     </form>
     <script>
-        document.getElementById("hoten").focus();
-    </script>
+
+    // </script>
+    <script src="check.js"></script>
 </body>
 </html>

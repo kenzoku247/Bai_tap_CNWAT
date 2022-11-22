@@ -22,6 +22,11 @@ var ghichu = String();
 
 const varToString = varObj => Object.keys(varObj)[0]
 
+window.onload = function() {
+    document.getElementById("hoten").focus();
+  }
+
+
 function change(value,arg) {
     if (value.length == 0) {
         eval(arg + " = String();");
@@ -36,7 +41,6 @@ function secure(arg_name){
         return false;
     } else {
         document.getElementById(arg_name + "_err").innerHTML = "";
-        document.getElementById("nam").focus();
         return true;
     }
 }
@@ -64,41 +68,40 @@ function chechFormatTen() {
             hoten = elements.join(" ");
             document.getElementById("hoten").value = hoten;
             document.getElementById("hoten_err").innerHTML = "";
-            document.getElementById("diachi").focus();
+            
             return true;
         }
         else {
-            document.getElementById("hoten_err").innerHTML = "Vui lòng nhập đúng định dạng tên!";
+            document.getElementById("hoten_err").innerHTML = "<small>Vui lòng nhập đúng định dạng tên!</small>";
             return false;
         }
     }
 }
 
 function checkTen(){
-    document.getElementById("hoten").addEventListener('keyup', function (e) {
-        if (e.key === 'Enter') { 
-            if (checkLength(varToString({hoten}) + "_err",hoten,"<small>Vui lòng nhập họ tên, không quá 50 ký tự</small>","")) {
-                if (chechFormatTen()){
-                    return true;
-                }  else return false;
-            }
-        }
-    })
+    if (checkLength(varToString({hoten}) + "_err",hoten,"<small>Vui lòng nhập họ tên, không quá 50 ký tự</small>","")) {
+        if (chechFormatTen()){
+            document.getElementById("hoten").addEventListener('keyup', function(evt) {
+                if (evt.key == 13) { 
+                    console.log(5);
+                    evt.preventDefault();
+                    document.getElementById('diachi').focus();
+                }  
+            });
+            
+            return true;
+        }  else return false;
+    }
 }
 
 
 function checkDiaChi(){
-    document.getElementById("diachi").addEventListener('keyup', function (e) {
-        if (e.key === 'Enter') {
-            // if (checkLength(varToString({diachi}) + "_err",diachi,"<small>Vui lòng nhập địa, không quá 50 ký tự</small>","")) {
-            //     if (secure(varToString({diachi}))) {
-            //         return true;
-        
-            //     } else return false;
-            // } 
-            document.getElementById('nam').focus();
-        }
-    })
+    if (checkLength(varToString({diachi}) + "_err",diachi,"<small>Vui lòng nhập địa, không quá 50 ký tự</small>","")) {
+        if (secure(varToString({diachi}))) {
+            return true;
+
+        } else return false;
+    } 
 
 }
 
@@ -113,29 +116,28 @@ function showPass(arg1,arg2) {
 }
 
 function submitForm() {
-    // document.getElementById("hoten").addEventListener('keyup', function (e) {
-    //     if (e.key === 'Enter') {
-    //         if (checkTen()){
-    //             document.getElementById("hoten").removeEventListener('keyup',);
-    //         }
+    // var check = false;
+    // if (checkTen()) {
+    //     if(chechFormatTen()) {
+    //         check = true;
     //     }
-    // })
-    // document.getElementById("diachi").addEventListener('keyup', function (e) {
-    //     if (e.key === 'Enter') {
-    //         console.log(true);
-    //         checkDiaChi();
+    // }
+
+    // if (check) {
+    //     if (checkDiaChi()) {
+    //         check = true;
     //     }
-    // })
-    if (checkTen()) {
-        document.getElementById("hoten").removeEventListener('keyup', function (e) {
-            if (e.key === 'Enter') { 
-                if (checkLength(varToString({hoten}) + "_err",hoten,"<small>Vui lòng nhập họ tên, không quá 50 ký tự</small>","")) {
-                    if (chechFormatTen()){
-                        return true;
-                    }  else return false;
-                }
-            }
-        })
-        checkDiaChi();
-    }
+    // }
 }
+
+$(document).on('keyup', 'input,select', function (e) {
+    if (e.key == 13) {
+        e.preventDefault();
+        var $next = $('[inputIndex=' + (+this.inputIndex + 1) + ']');
+        console.log($next.length);
+        if (!$next.length) {
+            $next = $('[inputIndex=1]');        
+        }
+        $next.focus().click();
+    }
+});

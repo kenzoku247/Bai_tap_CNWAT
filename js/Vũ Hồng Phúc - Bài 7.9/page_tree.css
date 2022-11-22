@@ -1,0 +1,51 @@
+body {
+    padding:0;
+	width: 800px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	top:0;
+    background-color: #ffe6de;
+}
+
+.Redirect {
+    width: 240px;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    background-color: white;
+    position:absolute;
+    left: -350px;
+    top:0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+}
+
+.Tree {
+    display: flex;
+    gap: 1rem;
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 12px;
+}  
+
+ul.tree li {
+	list-style:none;
+}
+
+ul.tree li a {
+	text-decoration:none;
+}
+
+ul.tree li.has-children {
+	margin-left:0px;
+}
+
+ul.tree li.no-child {
+	margin-left:16px;
+}
+
+ul.tree ul {
+	margin-left: 0px;
+}

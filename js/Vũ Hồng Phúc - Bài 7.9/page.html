@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree</title>
+    <link rel="stylesheet" href="page_tree.css">
+</head>
+<body>
+    <div class="Redirect">
+        <a href="../Vũ Hồng Phúc - Bài 7.2/page.html">Bài 7.2. Viết trang kiểm tra thi trắc nghiệm gồm nhiều thể loại</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.3/page.html" >Bài 7.3. Thiết kế form nhập liệu cho table LOP, xây dựng các đoạn JS kiểm tra dữ liệu đầu vào của form này</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.4/page.html" >Bài 7.4. Thiết kế form nhập liệu cho table HOSO, xây dựng các đoạn JS kiểm tra dữ liệu đầu vào của form này.</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.5/page.html" >Bài 7.5. Form nhập</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.6/page.html" >Bài 7.6. Danh sách</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.7/page.html" >Bài 7.7. Thực đơn</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.8/page.html" >Bài 7.8. Tab</a>
+        <a href="" style="text-decoration: none; color:black;">Bài 7.9. Cây</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.10/page.html">Bài 7.10. Máy tính</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.11/page.html">Bài 7.11. Hoạt ảnh</a>
+        <a href="../Vũ Hồng Phúc - Bài 7.12/page.html">Bài 7.12. Sắp xếp và tìm kiếm trên bảng</a>
+    </div>
+    <ul class="Tree">
+        <li class="has-children"><img src="images/minus.png" onclick="Folder_Toggle(this);"/><a href=""><img src="images/folder.png"/> Root</a>
+            <ul>
+                <li class="no-child"><a href=""><img src="images/folder.png"/> Folder 1</a></li>
+                <li class="has-children"><img src="images/minus.png" onclick="Folder_Toggle(this);"/><a href=""><img src="images/folder.png"/> Folder 2</a>
+                    <ul>
+                        <li class="no-child"><a href=""><img src="images/folder.png"/> Folder 2-1</a></li>
+                        <li class="has-children"><img src="images/minus.png" onclick="Folder_Toggle(this);"/><a href=""><img src="images/folder.png"/> Folder 2-2</a>
+                            <ul>
+                                <li class="no-child"><a href=""><img src="images/folder.png"/> Folder 2-2-1</a></li>
+                                <li class="no-child"><a href=""><img src="images/folder.png"/> Folder 2-2-2</a></li>
+                            </ul>
+                        </li>
+                        <li class="no-child"><a href=""><img src="images/folder.png"/> Folder 2-3</a></li>
+                    </ul>
+                </li>
+                <li class="no-child"><a href=""><img src="images/folder.png"/> Folder 3</a></li>
+                <li class="has-children"><img src="images/minus.png" onclick="Folder_Toggle(this);"/><a href=""><img src="images/folder.png"/> Folder 4</a>
+                    <ul>
+                        <li class="no-child"><a href=""><img src="images/folder.png"/> Folder 4-1</a></li>
+                        <li class="no-child"><a href=""><img src="images/folder.png"/> Folder 4-2</a></li>
+                        <li class="no-child"><a href=""><img src="images/folder.png"/> Folder 4-3</a></li>
+                    </ul>
+                </li>
+                <li class="no-child"><a href=""><img src="images/folder.png"/> Folder 5</a></li>
+            </ul>
+        </li>
+    </ul>
+    <script >
+        function Folder_Toggle(myself) {
+            if (myself.nextSibling.nextSibling.nextSibling.style.display == "") {
+                myself.nextSibling.nextSibling.nextSibling.style.display = "none";
+                myself.src = "images/plus.png";
+            } else {
+                myself.nextSibling.nextSibling.nextSibling.style.display = "";
+                myself.src = "images/minus.png";
+            }
+        }
+    </script>
+</body>
+</html>
